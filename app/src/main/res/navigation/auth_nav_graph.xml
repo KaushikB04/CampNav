@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/flashFragment">
+
+    <fragment
+        android:id="@+id/flashFragment"
+        android:name="com.example.campnav.auth.FlashFragment"
+        android:label="fragment_flash"
+        tools:layout="@layout/fragment_flash" >
+        <action
+            android:id="@+id/action_flashFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.campnav.auth.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.campnav.auth.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgetPassFragment"
+            app:destination="@id/forgetPassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPassFragment"
+        android:name="com.example.campnav.auth.ForgetPassFragment"
+        android:label="fragment_forget_pass"
+        tools:layout="@layout/fragment_forget_pass" />
+</navigation>
